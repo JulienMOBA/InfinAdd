@@ -13,9 +13,8 @@ RM	=	rm -f
 
 CFLAGS	=	-W -Werror -Wextra -Wpedantic
 
-SRC	=	rush3.c\
-		main.c\
-		bonus/libmy.a
+SRC	=	InfinAdd.c\
+		src/libmy.a
 
 OBJ	=	$(SRC:.c=.o)
 

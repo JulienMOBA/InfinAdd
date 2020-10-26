@@ -4,6 +4,8 @@
 ** File description:
 ** infinite addition
 */
+#include <unistd.h>
+#include "libmy.h"
 
 int my_strlen (char const *str);
 char my_putchar(char c);
