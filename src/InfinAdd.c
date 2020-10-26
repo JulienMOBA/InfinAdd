@@ -15,14 +15,15 @@ char calcul(char *str_one, char *str_two)
     char *dest malloc(sizeof (char) * (my_strlen(str_one) + my_strlen(str_two)));
 
     check_string(str_one, str_two);
-    i--;
-    j--;
-    k--;
     
-    while (str_one[i] || str_two[j]) {
-        dest[k] = (str_one[i] + str_two[j]) - 48;
+    while (str_one[i] && str_two[j]) {
+        if (str_one[i] >= '5'|| str_two[j] >= '5') {
+            dest[k] += (str_one[i] + str_two[j]) - 58;
+        }
+        else {
+            dest[k] = (str_one[i] + str_two[j]) - 48;
+        }
         if (dest[k] > '9') {
-            dest[k] = dest[k] - 58;
             dest[k - 1] += 1;
         }
         i--;
@@ -69,9 +70,6 @@ void check_string(char *str_one, char *str_two)
         if (str_two[0] == '-' || str_two[j] >= '0' && str_two[j] <= '9')
             j++;
     }
-    i--;
-    j--;
-    k--;
 }
 
 
