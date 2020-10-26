@@ -63,12 +63,13 @@ void check_string(char *str_one, char *str_two)
         k++;
     }
     while (str_one[i]) {
-        if (str_one[0] == '-' || str_one[i] >= '0' && str_one[i] <= '9')
             i++;
     }
     while (str_two[j]) {
-        if (str_two[0] == '-' || str_two[j] >= '0' && str_two[j] <= '9')
             j++;
+    }
+    if (j > i && str_two[0] == '-'|| i > j && str_one[0] == '-') {
+        dest[0] = '-';
     }
 }
 
