@@ -14,7 +14,7 @@ int my_putnbr(int nb)
 {
     if (nb < 0) {
         my_putchar('-');
-        nb 0 -nb;
+        nb = -nb;
     }
     if (nb <= 9)
         my_putchar(nb + 48);
@@ -25,7 +25,7 @@ int my_putnbr(int nb)
     return (0);
 }
 
-char *check_string(char const *str_one, char const *str_two)
+char *check_string(char *str_one, char *str_two)
 {
     int i = 0;
     int j = 0;
@@ -51,12 +51,12 @@ char *check_string(char const *str_one, char const *str_two)
             return(str_two);
 }
 
-char calcul(char const *str_one, char const *str_two)
+char calcul(char *str_one, char *str_two)
 {
     int i;
     int j;
     int k;
-    char *dest = malloc(sizeof(char*) * (check_string(str_one, str_two)) + 1);
+    char *dest = malloc(sizeof(char*) * (my_putnbr(check_string(str_one, str_two))) + 1);
 
     check_string(str_one, str_two);
     while (dest[k]) {
@@ -76,7 +76,7 @@ char calcul(char const *str_one, char const *str_two)
     }
 }
 
-void first_string_priority(char const *str_one, char const *str_two)
+void first_string_priority(char *str_one, char *str_two)
 {
     int i;
     int j;
@@ -94,7 +94,7 @@ void first_string_priority(char const *str_one, char const *str_two)
     }
 }
 
-void my_strings_negative(char const *str_one, char const *str_two)
+void my_strings_negative(char *str_one, char *str_two)
 {
     int i;
     int j;
@@ -115,7 +115,7 @@ void my_strings_negative(char const *str_one, char const *str_two)
     }
 }
 
-char calcul_negative(char const *str_one, char const *str_two)
+char calcul_negative(char *str_one, char *str_two)
 {
     int i;
     int j;
