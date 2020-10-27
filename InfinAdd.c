@@ -10,6 +10,20 @@
 
 int my_strlen (char const *str);
 int my_putchar(char c);
+int my_putnbr(int nb)
+{
+    if (nb < 0) {
+        my_putchar('-');
+        nb 0 -nb;
+    }
+    if (nb <= 9)
+        my_putchar(nb + 48);
+    else {
+        my_putnbr(nb / 10);
+        my_putnbr(nb % 10);
+    }
+    return (0);
+}
 
 char *check_string(char const *str_one, char const *str_two)
 {
