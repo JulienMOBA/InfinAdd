@@ -11,7 +11,7 @@
 int my_strlen (char const *str);
 int my_putchar(char c);
 
-void check_string(char *str_one, char *str_two)
+char *check_string(char *str_one, char *str_two)
 {
     int i = 0;
     int j = 0;
