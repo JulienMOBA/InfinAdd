@@ -11,7 +11,7 @@
 int my_strlen (char const *str);
 int my_putchar(char c);
 
-char *check_string(char *str_one, char *str_two)
+char *check_string(char const *str_one, char const *str_two)
 {
     int i = 0;
     int j = 0;
@@ -37,7 +37,7 @@ char *check_string(char *str_one, char *str_two)
             return(str_two);
 }
 
-char calcul(char *str_one, char *str_two)
+char calcul(char const *str_one, char const *str_two)
 {
     int i;
     int j;
@@ -62,7 +62,7 @@ char calcul(char *str_one, char *str_two)
     }
 }
 
-void first_string_priority(char *str_one, char *str_two)
+void first_string_priority(char const *str_one, char const *str_two)
 {
     int i;
     int j;
@@ -80,7 +80,7 @@ void first_string_priority(char *str_one, char *str_two)
     }
 }
 
-void my_strings_negative(char *str_one, char *str_two)
+void my_strings_negative(char const *str_one, char const *str_two)
 {
     int i;
     int j;
@@ -101,7 +101,7 @@ void my_strings_negative(char *str_one, char *str_two)
     }
 }
 
-char calcul_negative(char *str_one, char *str_two)
+char calcul_negative(char const *str_one, char const *str_two)
 {
     int i;
     int j;
@@ -126,7 +126,7 @@ char calcul_negative(char *str_one, char *str_two)
     return (dest);
 }
 
-char *infinadd(char *str_one, char *str_two)
+char *infinadd(char const *str_one, char const *str_two)
 {
     int i = 0;
     int j = 0;
