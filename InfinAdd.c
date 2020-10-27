@@ -76,6 +76,27 @@ char calcul(char *str_one, char *str_two)
     }
 }
 
+void my_strings_negative(char *str_one, char *str_two)
+{
+    int i;
+    int j;
+    int k;
+    char *dest;
+
+    if (my_strlen(str_one) < my_strlen(str_two)) {
+        dest[k] += (str_two[j] + str_one[i]) + 48;
+    }
+    else if (my_strlen(str_one) > my_strlen(str_two)) {
+        dest[k] += (str_one[i] + str_two[j]) + 48;
+    }
+    else {
+        if (str_one[1] > str_two[1])
+             dest[k] += (str_one[i] + str_two[j]) + 48;
+        else
+            dest[k] += (str_two[j] + str_one[i]) + 48;
+    }
+}
+
 void first_string_priority(char *str_one, char *str_two)
 {
     int i;
@@ -94,28 +115,7 @@ void first_string_priority(char *str_one, char *str_two)
     }
 }
 
-void my_strings_negative(char *str_one, char *str_two)
-{
-    int i;
-    int j;
-    int k;
-    char *dest;
-
-    if (my_strlen(str_one) < my_strlen(str_two)) {
-        dest[k] += (str_two[j] + str_one[i]) + 48;
-    }
-    else if (my_strlen(str_one) > my_strlen(str_two)) {
-        dest[k] += (str_one[i] + str_two[j]) + 48;
-    }
-    else {
-        if (str_one[1] > str_two[1])
-            dest[k] += (str_one[i] + str_two[j]) + 48;
-        else
-            dest[k] += (str_two[j] + str_one[i]) + 48;
-    }
-}
-
-char calcul_negative(char *str_one, char *str_two)
+char *calcul_negative(char *str_one, char *str_two)
 {
     int i;
     int j;
@@ -148,7 +148,7 @@ char *infinadd(char const *str_one, char const *str_two)
     char *dest;
 
     if (str_one[0] == '-' || str_two[0] == '-') {
-        calcul_negative(char *str_one, char *str_two);
+        *calcul_negative(char *str_one, char *str_two);
         return (dest);
     }
     else {
