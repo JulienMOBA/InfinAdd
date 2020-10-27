@@ -56,7 +56,7 @@ char calcul(char *str_one, char *str_two)
     int i;
     int j;
     int k;
-    char *dest = malloc(sizeof(char*) * (my_putnbr(check_string(str_one, str_two))) + 1);
+    char *dest = malloc(sizeof(char*) * (my_strlen(check_string(str_one, str_two))) + 1);
 
     check_string(str_one, str_two);
     while (dest[k]) {
