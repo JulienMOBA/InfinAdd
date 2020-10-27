@@ -5,17 +5,44 @@
 ** infinite addition
 */
 #include <unistd.h>
+#include <stdlib.h>
 #include "libmy.h"
 
 int my_strlen (char const *str);
-char my_putchar(char c);
+int my_putchar(char c);
+
+void check_string(char *str_one, char *str_two)
+{
+    int i = 0;
+    int j = 0;
+    int k = 0;
+
+    while (str_one[i] || str_two[j]) {
+        k++;
+    }
+    while (str_one[i]) {
+            i++;
+    }
+    while (str_two[j]) {
+            j++;
+    }
+    if (my_strlen(str_one) < my_strlen(str_two))
+        return (str_one);
+    else if (my_strlen(str_one) > my_strlen(str_two))
+        return (str_two);
+    else
+        if (str_one[1] > str_two[1])
+            return(str_one);
+        else if (str_one[1] < str_two[1])
+            return(str_two);
+}
 
 char calcul(char *str_one, char *str_two)
 {
     int i;
     int j;
     int k;
-    char *dest malloc(sizeof(char) * (check_string(str_one, str_two)) + 1);
+    char *dest = malloc(sizeof(char*) * (check_string(str_one, str_two)) + 1);
 
     check_string(str_one, str_two);
     while (dest[k]) {
@@ -74,14 +101,12 @@ void my_strings_negative(char *str_one, char *str_two)
     }
 }
 
-
-
 char calcul_negative(char *str_one, char *str_two)
 {
     int i;
     int j;
     int k;
-    char *dest malloc(sizeof(char) * (my_strlen(check_string(str_one, str_two))) + 1);
+    char *dest = malloc(sizeof(char*) * (my_strlen(check_string(str_one, str_two))) + 1);
 
     check_string(str_one, str_two);
     while (k >= 0) {
@@ -100,34 +125,6 @@ char calcul_negative(char *str_one, char *str_two)
     dest[0] = '-';
     return (dest);
 }
-
-
-void check_string(char *str_one, char *str_two)
-{
-    int i = 0;
-    int j = 0;
-    int k = 0;
-
-    while (str_one[i] || str_two[j]) {
-        k++;
-    }
-    while (str_one[i]) {
-            i++;
-    }
-    while (str_two[j]) {
-            j++;
-    }
-    if (my_strlen(str_one) < my_strlen(str_two))
-        return (str_one);
-    else if (my_strlen(str_one) > my_strlen(str_two))
-        return (str_two);
-    else
-        if (str_one[1] > str_two[1])
-            return(str_one);
-        else if (str_one[1] < str_two[1])
-            return(str_two);
-}
-
 
 char *infinadd(char *str_one, char *str_two)
 {
