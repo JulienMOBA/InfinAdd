@@ -13,7 +13,8 @@ RM	=	rm -f
 
 CFLAGS	=	-W -Werror -Wextra -Wpedantic
 
-SRC	=	InfinAdd.c\
+SRC	=	main.c\
+		InfinAdd.c\
 		src/libmy.a
 
 OBJ	=	$(SRC:.c=.o)
