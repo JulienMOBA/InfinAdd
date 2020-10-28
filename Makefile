@@ -5,7 +5,7 @@
 ## Project compilation file
 ##
 
-NAME	=	a.out
+NAME	=	infin_add
 
 CC	=	gcc
 
