@@ -27,25 +27,24 @@ char *check_string(char *str_one, char *str_two)
 
 char *calcul(char *str_one, char *str_two, char *dest)
 {
-   int i = my_strlen(str_one);
+    int i = my_strlen(str_one);
     int j = my_strlen(str_two);
-    int k = my_strlen(check_string(str_one, str_two));
+    int k = my_strlen(check_string(str_one, str_two) + 1);
     dest = malloc(sizeof(char*) * (my_strlen(check_string(str_one, str_two))) + 1);
 
     while (k != 0) {
         if (str_one[i] >= '5'|| str_two[j] >= '5') {
             dest[k] += (str_one[i] + str_two[j]);
-            if (dest[k] > '9') {
+            if (dest[k] > 105) {
                 dest[k - 1] += 1;
+                dest[k] -= 58;
             }
-            dest[k] = - 58;
+            else
+                dest[k] -= 48;
         }
         else {
             dest[k] = (str_one[i] + str_two[j]);
-            if (dest[k] > '9') {
-                dest[k - 1] += 1;
-            }
-            dest[k] = - 48;
+            dest[k] -= 48;
         }
         my_putchar(dest[k]);
         i--;
@@ -147,12 +146,12 @@ char *calcul_negative(char *str_one, char *str_two, char *dest)
     dest[0] = '-';
 }
 
-char *infinadd(char *str_one, char *str_two, char *dest)
+char *infinadd(char *str_one, char *str_two)
 {
     int i = 0;
     int j = 0;
     int k = 0;
-    dest = malloc(sizeof(char*) * (my_strlen(check_string(str_one, str_two))) + 1);
+    char *dest = malloc(sizeof(char*) * (my_strlen(check_string(str_one, str_two))) + 1);
 
     if (str_one[i] == '-' || str_two[i] == '-') {
         dest = calcul_negative(str_one, str_two, dest);
@@ -161,4 +160,10 @@ char *infinadd(char *str_one, char *str_two, char *dest)
         dest = calcul(str_one, str_two, dest);
     }
     return (dest);
+}
+
+int main()
+{
+    infinadd("13", "9");
+    return (0);
 }
